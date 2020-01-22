@@ -1,0 +1,52 @@
+.cast {
+  width: 100%;
+  @media screen and (orientation:landscape) {
+    width: 75%;
+  }
+  @media screen and (min-width: 768px) and (orientation:landscape) {
+    width: 90%;
+  }
+  @media screen and (min-width: 1200px){
+    width: 90%;
+  }
+  .slider {
+    margin-top: 3rem;
+    .character {
+      width: 6rem !important;
+      height: 6rem;
+      border-radius: 50%;
+      object-fit: cover;
+      @media screen and (min-width: 768px){
+        width: 7rem !important;
+        height: 7rem;
+      }
+    }
+  }
+}
+
+// Slider
+.slick-slider{
+  // carousel controls 
+  .slick-prev, 
+  .slick-next {
+    width: auto;
+    height: auto;
+    &:before {
+      font-size: 3rem;
+      color: #fff;
+      // color: #222b31;
+      font-family: "Ionicons";
+    }
+  }
+  .slick-prev {
+    &:before {
+      content: "\f3cf";
+    }
+  }
+  .slick-next {
+    &:before {
+      content: "\f3d1";
+    }
+  }
+}
+

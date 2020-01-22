@@ -1,0 +1,36 @@
+.movie {
+  margin: 2rem 0;
+  position: relative;
+
+  .rating {
+    background-color: #ffb10a;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.4rem 0;
+    min-width: 3.2rem;
+    display: block;
+    border-radius: 2rem;
+    position: absolute;
+    top: -1rem;
+    left: 45%;
+  }
+  
+  .title {  
+    color: #fff;
+    font-weight: bold;
+    margin: 1rem 0;
+    font-size: 1.6rem;
+  }
+  
+  img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    box-shadow: rgba(255, 177, 10, 0.8) 0px 0px 5px;
+    border-radius: 8px;
+  }
+  
+}
+

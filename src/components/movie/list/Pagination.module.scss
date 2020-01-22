@@ -1,0 +1,90 @@
+.pagination {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 30%;
+  }
+
+  .page_no {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+
+  a {
+    display: block;
+    text-transform: capitalize;
+    cursor: pointer;
+    background:#FF414C;
+    color: #fff;
+    outline-color: #FF414C;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    &.hide {
+      opacity: 0.5;
+      cursor: not-allowed;
+    } 
+
+    &:after,
+    &:before {
+      font-size: 1.6rem;
+      color: #fff;
+      font-family: "Ionicons";
+      vertical-align: bottom;
+    }
+  }
+
+  .first,
+  .last {
+    width: 4rem;
+    height: 4rem;
+    align-self: center;
+  }
+
+  .prev,
+  .next {
+    width: 3rem;
+    height: 3rem;
+    align-self: center;
+  }
+
+  .first {
+    &:before {
+      content: "\f370";
+      margin-right: 0.5rem;
+    }
+  }
+
+  .last {
+    &:after {
+      content: "\f2ea";
+    }
+  }
+
+  .prev {
+    &:before {
+      content: "\f3cf";
+      margin-right: 0.5rem;
+    }
+  }
+  
+  .next {
+    &:after {
+      content: "\f3d1";
+    }
+  }
+}

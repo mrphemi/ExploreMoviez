@@ -1,0 +1,65 @@
+.loader {
+ position: fixed;
+ top: 6rem;
+ left: 0;
+ width: 100%;
+ height: calc(100% - 6rem);
+ z-index: 10;
+ justify-content: center;
+ align-items: center;
+ background-color: #232A32;
+ display: none;
+
+ &.show {
+  display: flex;
+ }
+
+  div {
+    width: 0.8rem;
+    height: 7rem;
+    margin-left: 0.5rem;
+    text-align: center;
+    background-color: #f83745;
+    display: inline-block;
+    
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+  
+   .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+  
+   .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+   .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+  
+   .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+  
+  @-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+    20% { -webkit-transform: scaleY(1.0) }
+  }
+  
+  @keyframes sk-stretchdelay {
+    0%, 40%, 100% { 
+      transform: scaleY(0.4);
+      -webkit-transform: scaleY(0.4);
+    }  20% { 
+      transform: scaleY(1.0);
+      -webkit-transform: scaleY(1.0);
+    }
+  }
+
+}  
+
