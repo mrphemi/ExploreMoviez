@@ -1,7 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import { Popular, NowPlaying, TopRated, Upcoming } from "../components/movie/categories";
+import {
+  Popular,
+  NowPlaying,
+  TopRated,
+  Upcoming,
+} from "../components/movie/categories";
 
 import MovieInfo from "./movie/info/MovieInfo";
 import Nav from "./nav/Nav";
