@@ -8,7 +8,7 @@ import EmptyList from "./EmptyList";
 import styles from "./MovieList.module.scss";
 
 const MovieList = () => {
-  const movieList = useSelector(state => state.movies.movies.list);
+  const movieList = useSelector((state) => state.movies.movies.list);
 
   // Create ref for movies list
   const listRef = useRef(null);
@@ -28,8 +28,9 @@ const MovieList = () => {
       {movieList.length ? (
         <>
           <div className={styles.wrapper} ref={listRef}>
-            {movieList.length !== 0 &&
-              movieList.map(movie => <MovieItem key={movie.id} details={movie} />)}
+            {movieList.map((movie) => (
+              <MovieItem key={movie.id} details={movie} />
+            ))}
           </div>
           <Pagination />
         </>

@@ -16,7 +16,10 @@ const TopNav = ({ toggleNav, toggleSearch, isOpen }) => (
         <i className="icon ion-ios-search" />
       </div>
 
-      <div className={`${styles.burger} ${isOpen ? styles.open : ""}`} onClick={toggleNav}>
+      <div
+        className={`${styles.burger} ${isOpen ? styles.open : ""}`}
+        onClick={toggleNav}
+      >
         <span />
         <span />
         <span />
@@ -27,8 +30,8 @@ const TopNav = ({ toggleNav, toggleSearch, isOpen }) => (
 
 TopNav.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  toogleSearch: PropTypes.func.isRequired,
-  toggleNav: PropTypes.func.isRequired
+  toogleSearch: PropTypes.func,
+  toggleNav: PropTypes.func.isRequired,
 };
 
 export default TopNav;

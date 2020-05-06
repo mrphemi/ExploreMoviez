@@ -11,16 +11,16 @@ const Nav = () => {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const dispatch = useDispatch();
-  const genres = useSelector(state => state.movies.genres);
+  const genres = useSelector((state) => state.movies.genres);
 
   // Toggle sidenav
   const toggleSideNav = () => {
-    setIsSideNavOpen(prevState => !prevState);
+    setIsSideNavOpen((prevState) => !prevState);
   };
 
   // Toggle searchbar
   const toggleSearchBar = () => {
-    setIsSearchBarOpen(prevState => !prevState);
+    setIsSearchBarOpen((prevState) => !prevState);
   };
 
   useEffect(() => {
@@ -30,9 +30,17 @@ const Nav = () => {
 
   return (
     <>
-      <TopNav toggleNav={toggleSideNav} toggleSearch={toggleSearchBar} isOpen={isSideNavOpen} />
+      <TopNav
+        toggleNav={toggleSideNav}
+        toggleSearch={toggleSearchBar}
+        isOpen={isSideNavOpen}
+      />
       <Search isOpen={isSearchBarOpen} toggleSearch={toggleSearchBar} />
-      <SideNav toggleNav={toggleSideNav} genres={genres} isOpen={isSideNavOpen} />
+      <SideNav
+        toggleNav={toggleSideNav}
+        genres={genres}
+        isOpen={isSideNavOpen}
+      />
     </>
   );
 };

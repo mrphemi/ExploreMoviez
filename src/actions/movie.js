@@ -76,12 +76,17 @@ export const fetchNowPlaying = (page_no = 1) => (dispatch) => {
 
 // Get list of movie genres with their respective ids
 export const fetchAllGenres = () => (dispatch) => {
-  baseUrl
-    .get("/genre/movie/list", { params: { api_key: api_key } })
-    .then((result) => {
-      dispatch(getGenres(result.data.genres));
-    })
-    .catch((err) => console.log(err));
+  if (localStorage.getItem("genres")) {
+    dispatch(getGenres(JSON.parse(localStorage.getItem("genres"))));
+  } else {
+    baseUrl
+      .get("/genre/movie/list", { params: { api_key: api_key } })
+      .then((result) => {
+        dispatch(getGenres(result.data.genres));
+        localStorage.setItem("genres", JSON.stringify(result.data.genres));
+      })
+      .catch((err) => console.log(err));
+  }
 };
 
 // Get movie details

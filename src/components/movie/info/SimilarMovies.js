@@ -27,7 +27,7 @@ const SimilarMovies = ({ movieId }) => {
 };
 
 SimilarMovies.propTypes = {
-  movieId: PropTypes.number.isRequired
+  movieId: PropTypes.string.isRequired,
 };
 
 export default SimilarMovies;

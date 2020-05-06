@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import { createStore, applyMiddleware } from "redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -13,7 +15,7 @@ import "./styles.scss";
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+  composeWithDevTools(applyMiddleware(thunk)),
 );
 
 const rootElement = document.getElementById("root");
@@ -23,5 +25,5 @@ ReactDOM.render(
       <App />
     </Router>
   </Provider>,
-  rootElement
+  rootElement,
 );

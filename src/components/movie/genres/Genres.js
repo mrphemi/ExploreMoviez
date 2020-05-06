@@ -11,7 +11,9 @@ import MovieList from "../list/MovieList";
 // List movies by genres
 const ListByGenres = () => {
   const dispatch = useDispatch();
-  const genres = useSelector((state) => state.movies.genres);
+  const genres = JSON.parse(localStorage.getItem("genres"));
+  // const genres = useSelector((state) => state.movies.genres);
+
   const { genreId } = useParams();
   const { page } = queryString.parse(useLocation().search);
 

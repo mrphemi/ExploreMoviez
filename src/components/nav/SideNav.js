@@ -8,7 +8,7 @@ const SideNav = ({ genres = [], isOpen, toggleNav }) => {
   let categoryLinks = [
     { name: "popular", path: "/categories/popular" },
     { name: "top rated", path: "/categories/toprated" },
-    { name: "upcoming", path: "/categories/upcoming" }
+    { name: "upcoming", path: "/categories/upcoming" },
   ];
   return (
     <div className={`${styles.wrapper} ${isOpen ? styles.show : ""}`}>
@@ -16,7 +16,11 @@ const SideNav = ({ genres = [], isOpen, toggleNav }) => {
         {categoryLinks.length !== 0 &&
           categoryLinks.map((link, i) => (
             <li key={i}>
-              <NavLink activeClassName={styles.active} to={link.path} onClick={toggleNav}>
+              <NavLink
+                activeClassName={styles.active}
+                to={link.path}
+                onClick={toggleNav}
+              >
                 {link.name}
               </NavLink>
             </li>
@@ -25,9 +29,13 @@ const SideNav = ({ genres = [], isOpen, toggleNav }) => {
       <hr />
       <ul className={styles.genres}>
         {genres.length !== 0 &&
-          genres.map(genre => (
+          genres.map((genre) => (
             <li key={genre.id}>
-              <NavLink to={`/genres/${genre.id}`} onClick={toggleNav}>
+              <NavLink
+                activeClassName={styles.active}
+                to={`/genres/${genre.id}`}
+                onClick={toggleNav}
+              >
                 {genre.name}
               </NavLink>
             </li>
@@ -40,7 +48,7 @@ const SideNav = ({ genres = [], isOpen, toggleNav }) => {
 SideNav.propTypes = {
   genres: PropTypes.array,
   isOpen: PropTypes.bool.isRequired,
-  toggleNav: PropTypes.func.isRequired
+  toggleNav: PropTypes.func.isRequired,
 };
 
 export default SideNav;

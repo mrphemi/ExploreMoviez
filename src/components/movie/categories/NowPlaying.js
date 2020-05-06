@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import baseUrl from "../../../api";
 
 import { fetchNowPlaying } from "../../../actions/movie";
 import useFetchCategory from "./useFetchCategory";
@@ -9,6 +10,7 @@ import "./categories.scss";
 
 const NowPlaying = () => {
   useFetchCategory(fetchNowPlaying);
+
   return (
     <>
       <h2 className="heading">now playing</h2>
